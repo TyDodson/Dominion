@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Test Slider</title>
+	
+	<meta name="Test Page for Dominion" content="">
+	
+  <!-- Mobile-friendly viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Style sheet link -->
+	<link href="css/main.css" rel="stylesheet" media="all">
+	
+	<script>
+	var boxPos;
+	var timer;
+	function toggleOverlay(){
+		var overlay = document.getElementById('overlay');
+		var specialBox = document.getElementById('specialBox');
+		overlay.style.opacity = .8;
+		boxPos = 100;
+		if(overlay.style.display == "block"){
+			overlay.style.display = "none";
+			specialBox.style.display = "none";
+			window.setTimeout("toggleOverlay()",3000);
+		} else {
+			overlay.style.display = "block";
+			specialBox.style.display = "block";
+			timer = window.setInterval("slider()",25);
+			window.setTimeout("toggleOverlay()",5000);
+			}
+	}
+	function slider() {
+		if (boxPos > 30) {
+			boxPos = (boxPos - 2);
+			specialBox.style.marginLeft = boxPos+"vw";
+		}
+		else {
+			window.clearInterval(timer);
+			}
+	}
+	</script>
+</head>
+<body>
+	<div id="overlay"></div>
+	<div id="specialBox">
+		<h1>This is a headline that will not wrap</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra laoreet libero non laoreet. Aliquamporttitor at nisi at fermenturn. Nullam in lobortis massa. In at placerat lectus, non lacinia erat. Fusce rhoncus vehicula diam, in suscipit justo varius vitae. Nunc egestas nex turpis ut euismod. Nullam vel aliquam mauris. Mauris venenatis, neque quis iaculis commodo, turpis lorem elementum tellus, quis rutrum manga odia ac magna. Proin imperdiet dolor non est fringilla mollis. Donec eu nisl aliquet, ultrices metus ac, condimentum risus. Phasellus vehicula sed nunc nec pharetra. Nunc mollis a sapien sit amet veneatis. Quisue vitae lacus eget leoelifend congue sed nec elit. aenean vel metus mauris. Fusce dapibus,</p> 
+	</div>
+	<div id="wrapper">
+		<div class="Orange">&nbsp;</div>
+		<div class="Red">&nbsp;</div>
+		<div class="Blue">&nbsp;</div>
+		<div class="Black">&nbsp;</div>
+		<div class="Green">&nbsp;</div>
+		<div class="Yellow">&nbsp;</div>
+		<div class="Purple">&nbsp;</div>
+		<div class="Grey">&nbsp;</div>
+		<div class="Pink">&nbsp;</div>
+		<script>
+			window.setTimeout("toggleOverlay()",3000);
+		</script>
+	</div>
+</body>
+</html>
