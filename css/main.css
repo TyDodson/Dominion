@@ -118,7 +118,17 @@ div#specialBox {
 	height: 26vw;
 	background: #FFF;
 	color: #000;
+	-webkit-transition: -webkit-transform 1s ease;
+    -moz-transition: -moz-transform 1s ease;
+    -o-transition: -o-transform 1s ease;
+    transition: transform 1s ease;
+	-webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
 }
+
 div#wrapper {
 	position:absolute;
 	top: 0px;

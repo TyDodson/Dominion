@@ -13,35 +13,7 @@
    <!-- Style sheet link -->
 	<link href="css/main.css" rel="stylesheet" media="all">
 	
-	<script>
-	var boxPos;
-	var timer;
-	function toggleOverlay(){
-		var overlay = document.getElementById('overlay');
-		var specialBox = document.getElementById('specialBox');
-		overlay.style.opacity = .8;
-		boxPos = 100;
-		if(overlay.style.display == "block"){
-			overlay.style.display = "none";
-			specialBox.style.display = "none";
-			window.setTimeout("toggleOverlay()",3000);
-		} else {
-			overlay.style.display = "block";
-			specialBox.style.display = "block";
-			timer = window.setInterval("slider()",25);
-			window.setTimeout("toggleOverlay()",5000);
-			}
-	}
-	function slider() {
-		if (boxPos > 30) {
-			boxPos = (boxPos - 2);
-			specialBox.style.marginLeft = boxPos+"vw";
-		}
-		else {
-			window.clearInterval(timer);
-			}
-	}
-	</script>
+	<script src="./scripts/main.js"></script>
 </head>
 <body>
 	<div id="overlay"></div>
